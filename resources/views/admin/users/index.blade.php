@@ -16,6 +16,7 @@
                       <tr>
                         <th scope="col">#</th>
                         <th scope="col">Nombre</th>
+                        <th scope="col">Cedula</th>
                         <th scope="col">E-Mail</th>
                         <th scope="col">Roles</th>
                         <th scope="col">Acción</th>
@@ -27,6 +28,7 @@
                         <tr>
                             <th scope="row">{{ $user->id }}</th>
                             <td>{{ $user->name }}</td>
+                            <td>{{ $user->cedula }}</td>
                             <td>{{ $user->email }}</td>
                             <td>{{ implode(', ', $user->roles()->get()->pluck('name')->toArray()) }}</td>
                             <td>

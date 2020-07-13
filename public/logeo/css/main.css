@@ -191,6 +191,22 @@ iframe {
   padding: 177px 130px 33px 95px;
 }
 
+.wrap-login1002 {
+    width: 960px;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 60px 130px 33px 95px;
+  }
+
 /*------------------------------------------------------------------
 [  ]*/
 .login100-pic {
@@ -373,6 +389,28 @@ iframe {
   }
 }
 
+@media (max-width: 992px) {
+    .wrap-login1002 {
+      padding: 177px 90px 33px 85px;
+    }
+
+    .login1002-pic {
+      width: 35%;
+    }
+
+    .login1002-form {
+      width: 50%;
+    }
+  }
+
+
+
+
+
+
+
+
+
 @media (max-width: 768px) {
   .wrap-login100 {
     padding: 100px 80px 33px 80px;
@@ -387,11 +425,38 @@ iframe {
   }
 }
 
+@media (max-width: 768px) {
+    .wrap-login1002 {
+      padding: 100px 80px 33px 80px;
+    }
+
+    .login1002-pic {
+      display: none;
+    }
+
+    .login1002-form {
+      width: 100%;
+    }
+  }
+
+
+
+
+
+
+
+
 @media (max-width: 576px) {
   .wrap-login100 {
     padding: 100px 15px 33px 15px;
   }
 }
+
+@media (max-width: 576px) {
+    .wrap-login1002 {
+      padding: 100px 15px 33px 15px;
+    }
+  }
 
 
 /*------------------------------------------------------------------

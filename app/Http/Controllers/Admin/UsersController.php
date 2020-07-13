@@ -33,11 +33,11 @@ class UsersController extends Controller
         return view('admin.users.index')->with('users', $users);
     }
 
-    
 
-   
 
-    
+
+
+
     /**
      * Show the form for editing the specified resource.
      *
@@ -68,8 +68,9 @@ class UsersController extends Controller
     public function update(Request $request, User $user)
     {
         $user->roles()->sync($request->roles);
-         
+
         $user->name = $request->name;
+        $user->cedula = $request->cedula;
         $user->email = $request->email;
         if($user->save()){
 
@@ -79,7 +80,7 @@ class UsersController extends Controller
             $request->session()->flash('error', 'Error al actualizar el Usuario');
         }
 
-        
+
 
 
         return redirect()->route('admin.users.index');

@@ -52,6 +52,7 @@ class RegisterController extends Controller
     {
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
+            'cedula' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
@@ -67,13 +68,14 @@ class RegisterController extends Controller
     {
         $user = User::create([
             'name' => $data['name'],
+            'cedula' => $data['cedula'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
 
-       /* $role = Role::select('id')->where('name', 'user')->first();
+        $role = Role::select('id')->where('name', 'user')->first();
 
-        $user->roles()->attach($role);*/
+        $user->roles()->attach($role);
 
         return $user;
     }
