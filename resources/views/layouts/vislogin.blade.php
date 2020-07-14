@@ -9,20 +9,20 @@
 
 
 <!--===============================================================================================-->
-	<link rel="icon" type="image/png" href="logeo/images/icons/favicon.ico"/>
+	<link rel="icon" type="image/png" href="{{ asset('logeo/images/icons/favicon.ico') }}"/>
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="logeo/vendor/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="{{ asset('logeo/vendor/bootstrap/css/bootstrap.min.css') }}">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="logeo/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="{{ asset('logeo/fonts/font-awesome-4.7.0/css/font-awesome.min.css') }}">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="logeo/vendor/animate/animate.css">
+	<link rel="stylesheet" type="text/css" href="{{ asset('logeo/vendor/animate/animate.css') }}">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="logeo/vendor/css-hamburgers/hamburgers.min.css">
+	<link rel="stylesheet" type="text/css" href="{{ asset('logeo/vendor/css-hamburgers/hamburgers.min.css') }}">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="logeo/vendor/select2/select2.min.css">
+	<link rel="stylesheet" type="text/css" href="{{ asset('logeo/vendor/select2/select2.min.css') }}">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="logeo/css/util.css">
-	<link rel="stylesheet" type="text/css" href="logeo/css/main.css">
+	<link rel="stylesheet" type="text/css" href="{{ asset('logeo/css/util.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ asset('logeo/css/main.css') }}">
 <!--===============================================================================================-->
 </head>
 <body>
@@ -110,21 +110,22 @@
 
 
 <!--===============================================================================================-->
-	<script src="logeo/vendor/jquery/jquery-3.2.1.min.js"></script>
+	<script src="{{ asset('logeo/vendor/jquery/jquery-3.2.1.min.js') }}"></script>
 <!--===============================================================================================-->
-	<script src="logeo/vendor/bootstrap/js/popper.js"></script>
-	<script src="logeo/vendor/bootstrap/js/bootstrap.min.js"></script>
+	<script src="{{ asset('logeo/vendor/bootstrap/js/popper.js') }}"></script>
+	<script src="{{ asset('logeo/vendor/bootstrap/js/bootstrap.min.js') }}"></script>
 <!--===============================================================================================-->
-	<script src="logeo/vendor/select2/select2.min.js"></script>
+    <script src="{{ asset('logeo/vendor/select2/select2.min.js') }}"></script>
+
 <!--===============================================================================================-->
-	<script src="logeo/vendor/tilt/tilt.jquery.min.js"></script>
+	<script src="{{ asset('logeo/vendor/tilt/tilt.jquery.min.js') }}"></script>
 	<script >
 		$('.js-tilt').tilt({
 			scale: 1.1
 		})
 	</script>
 <!--===============================================================================================-->
-	<script src="logeo/js/main.js"></script>
+	<script src="{{ asset('logeo/js/main.js') }}"></script>
 
 </body>
 </html>

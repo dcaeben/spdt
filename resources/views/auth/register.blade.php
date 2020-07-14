@@ -10,14 +10,14 @@
 
     <form class="login100-form" method="POST" action="{{ route('register') }}">
         @csrf
-        <span class="login100-form-title">
+        <span class="login1002-form-title">
             Registro Asociados
         </span>
 
 
         <div class="wrap-input100">
 
-         <input id="name" type="text" class="input100 @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+         <input id="name" type="text" class="input100 @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" placeholder="Digite Nombres y Apellidos" autofocus>
             @error('name')
             <span class="invalid-feedback" role="alert">
             <strong>{{ $message }}</strong>
@@ -31,7 +31,7 @@
 
         <div class="wrap-input100">
 
-        <input id="cedula" type="text" class="input100 @error('cedula') is-invalid @enderror" name="cedula" value="{{ old('cedula') }}" required autocomplete="cedula" autofocus>
+        <input id="cedula" type="text" class="input100 @error('cedula') is-invalid @enderror" name="cedula" value="{{ old('cedula') }}" required autocomplete="cedula" placeholder="Digite Cedula" autofocus>
         @error('cedula')
         <span class="invalid-feedback" role="alert">
         <strong>{{ $message }}</strong>
@@ -44,7 +44,7 @@
         </div>
 
         <div class="wrap-input100">
-            <input id="email" type="email" class="input100 @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+            <input id="email" type="email" class="input100 @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="Digite E-Mail" autofocus>
             @error('email')
             <span class="invalid-feedback" role="alert">
             <strong>{{ $message }}</strong>
@@ -57,7 +57,7 @@
         </div>
 
         <div class="wrap-input100">
-            <input id="password" type="password" class="input100 @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+            <input id="password" type="password" class="input100 @error('password') is-invalid @enderror" name="password" required autocomplete="new-password" placeholder="Digite Password">
             @error('password')
             <span class="invalid-feedback" role="alert">
             <strong>{{ $message }}</strong>
@@ -70,7 +70,7 @@
         </div>
 
         <div class="wrap-input100">
-            <input id="password-confirm" type="password" class="input100" name="password_confirmation" required autocomplete="new-password">
+            <input id="password-confirm" type="password" class="input100" name="password_confirmation" required autocomplete="new-password" placeholder="Confirme Password">
 
             <span class="focus-input100"></span>
             <span class="symbol-input100">

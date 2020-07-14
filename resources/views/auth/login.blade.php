@@ -15,7 +15,7 @@
         </span>
 
         <div class="wrap-input100">
-            <input id="email" type="email" class="input100 @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus >
+            <input id="email" type="email" class="input100 @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="Digite Email" autofocus >
             @error('email')
              <span class="invalid-feedback" role="alert">
              <strong>{{ $message }}</strong>
@@ -30,7 +30,7 @@
         </div>
 
         <div class="wrap-input100">
-            <input id="password" type="password" class="input100 @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+            <input id="password" type="password" class="input100 @error('password') is-invalid @enderror" name="password" required autocomplete="current-password" placeholder="Digite Password">
             @error('password')
             <span class="invalid-feedback" role="alert">
             <strong>{{ $message }}</strong>

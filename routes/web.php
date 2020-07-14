@@ -39,6 +39,8 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('/asociado', 'PartnerController@index')->name('partner');
+
 //Ruta de Administracion Usuarios
 
 
