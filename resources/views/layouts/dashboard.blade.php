@@ -32,14 +32,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <a class="nav-link" data-widget="pushmenu" href="{{ url('/') }}" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="http://localhost/crud/public/asociado" class="nav-link">Sum Totales</a>
+        <a href="" class="nav-link">Informe General</a>
       </li>
-      <li class="nav-item d-none d-sm-inline-block">
-        <a href="http://localhost/crud/public/planilla" class="nav-link">Planilla Mes</a>
-      </li>
-      <li class="nav-item d-none d-sm-inline-block">
-        <a href="http://localhost/crud/public/saldos" class="nav-link">Saldos Abonos</a>
-      </li>
+
+
     </ul>
 
 
@@ -83,12 +79,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <div class="sidebar">
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-        <div class="image">
-          <img src="{{ asset('dashboard/dist/img/user2-160x160.jpg') }}" class="img-circle elevation-2" alt="User Image">
-        </div>
+
         <div class="info">
-          <a href="#" class="d-block">DIEGO ANDRES RUIZ</a>
+          <h6 style="color: aliceblue">{{ Auth::user()->name }}</h6>
         </div>
+
       </div>
 
       <!-- Sidebar Menu -->
@@ -97,7 +92,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item has-treeview menu-open">
-            <a href="http://localhost/crud/public/asociado" class="nav-link active">
+            <a href="#" class="nav-link active">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Menu
@@ -106,23 +101,19 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </a>
             <ul class="nav nav-treeview">
                 <li class="nav-item">
-                    <a href="http://localhost/crud/public/asociado" class="nav-link">
+                    <a href="#" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
-                      <p>Suma Totales</p>
+                      <p>Informe General</p>
                     </a>
                   </li>
-              <li class="nav-item">
-                <a href="http://localhost/crud/public/planilla" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Planilla Mes</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="http://localhost/crud/public/saldos" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Saldos Abonos</p>
-                </a>
-              </li>
+            </ul>
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Simulador de Creditos</p>
+                    </a>
+                  </li>
             </ul>
           </li>
 
