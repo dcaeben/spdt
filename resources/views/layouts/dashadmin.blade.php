@@ -36,16 +36,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
       </li>
 
 
-      <!-- Menu Asociados -->
-
-      <li class="nav-item d-none d-sm-inline-block">
-        <a href="" class="nav-link">Informe General</a>
-      </li>
-
-
       <!-- Menu Administradores -->
       <li class="nav-item d-none d-sm-inline-block">
         <a href="" class="nav-link">Actualizar Informe</a>
+      </li>
+
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="" class="nav-link">Administrador de Permisos</a>
       </li>
 
 
@@ -139,22 +136,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <!-- Fin Menu Administradores -->
 
            <!-- Inicio Menu Asociados -->
-            <ul class="nav nav-treeview">
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p>Informe General</p>
-                    </a>
-                  </li>
-            </ul>
-            <ul class="nav nav-treeview">
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p>Simulador de Creditos</p>
-                    </a>
-                  </li>
-            </ul>
+
+
             <!-- Fin Menu Asociados -->
 
 
