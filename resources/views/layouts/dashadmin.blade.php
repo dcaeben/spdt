@@ -38,11 +38,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
       <!-- Menu Administradores -->
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="" class="nav-link">Actualizar Informe</a>
+        <a href="{{ route('report') }}" class="nav-link">Actualizar Datos</a>
       </li>
 
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="" class="nav-link">Administrador de Permisos</a>
+      <a href="{{ route('admin.users.index') }}" class="nav-link">Administrador de Permisos</a>
       </li>
 
 
@@ -116,15 +116,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
             <ul class="nav nav-treeview">
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="{{ route('report') }}" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
-                      <p>Actualizar Informe</p>
+                      <p>Actualizar Datos</p>
                     </a>
                   </li>
             </ul>
             <ul class="nav nav-treeview">
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="{{ route('admin.users.index') }}" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
                       <p>
                         Administrador de Permisos

@@ -46,8 +46,9 @@ Route::get('/asociado', 'PartnerController@index')->name('partner');
 
 Route::namespace('Admin')->prefix('admin')->name('admin.')->middleware('can:manage-users')->group(function(){
 
-    Route::resource('/users', 'UsersController', ['except' => ['show', 'create', 'store']]);
-
-
-
+Route::resource('/users', 'UsersController', ['except' => ['show', 'create', 'store']]);
 });
+
+//Ruta de Administracion Cargar Base de Datos
+
+Route::get('/cargardatos', 'ReportController@index')->name('report');
