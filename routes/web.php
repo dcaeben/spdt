@@ -52,3 +52,4 @@ Route::resource('/users', 'UsersController', ['except' => ['show', 'create', 'st
 //Ruta de Administracion Cargar Base de Datos
 
 Route::get('/cargardatos', 'ReportController@index')->name('report');
+Route::post('import-list-excel', 'ReportController@importExcel')->name('report.excel');

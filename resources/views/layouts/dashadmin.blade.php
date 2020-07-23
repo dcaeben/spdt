@@ -18,6 +18,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
   <!-- Theme style -->
   <link rel="stylesheet" href="{{ asset('dashboard/dist/css/adminlte.min.css') }}">
+
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 
@@ -206,16 +207,28 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <!-- AdminLTE App -->
 <script src="{{ asset('dashboard/dist/js/adminlte.min.js') }}"></script>
 
+
 <!-- DataTables -->
 <script src="{{ asset('dashboard/plugins/datatables/jquery.dataTables.min.js') }}"></script>
 <script src="{{ asset('dashboard/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js') }}"></script>
 <script src="{{ asset('dashboard/plugins/datatables-responsive/js/dataTables.responsive.min.js') }}"></script>
 <script src="{{ asset('dashboard/plugins/datatables-responsive/js/responsive.bootstrap4.min.js') }}"></script>
 <!-- AdminLTE App -->
-<script src="{{ asset('dashboard/dist/js/adminlte.min.js') }}"></script>
+
+
+<script src="{{ asset('dashboard/plugins/bs-custom-file-input/bs-custom-file-input.min.js') }}"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+      bsCustomFileInput.init();
+    });
+
+</script>
+
 <!-- AdminLTE for demo purposes -->
 <script src="{{ asset('dashboard/dist/js/demo.js') }}"></script>
 <!-- page script -->
+
+
 <script>
     $(function () {
       $("#example1").DataTable({

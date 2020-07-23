@@ -18,42 +18,58 @@
       <div class="row">
         <div class="card card-primary">
             <div class="card-header">
-              <h3 class="card-title">Quick Example</h3>
+              <h3 class="card-title">Cargar Archivo</h3>
             </div>
             <!-- /.card-header -->
             <!-- form start -->
-            <form role="form">
+        <form role="form" action="{{ route('report.excel') }}" method="post" enctype="multipart/form-data">
+
               <div class="card-body">
+
                 <div class="form-group">
-                  <label for="exampleInputEmail1">Email address</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
-                </div>
-                <div class="form-group">
-                  <label for="exampleInputPassword1">Password</label>
-                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                </div>
-                <div class="form-group">
-                  <label for="exampleInputFile">File input</label>
+                  <label>Importar Archivo Excel</label>
                   <div class="input-group">
+                    @csrf
                     <div class="custom-file">
-                      <input type="file" class="custom-file-input" id="exampleInputFile">
-                      <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+                      <input type="file" name="file" class="custom-file-input" id="exampleInputFile">
+                      <label class="custom-file-label" for="exampleInputFile">Seleccionar Archivo</label>
+
                     </div>
                     <div class="input-group-append">
-                      <span class="input-group-text" id="">Upload</span>
+                      <span class="input-group-text" id="">Subir Datos</span>
                     </div>
                   </div>
                 </div>
-                <div class="form-check">
-                  <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                  <label class="form-check-label" for="exampleCheck1">Check me out</label>
+
+
+               <script>
+                $('h1').ready(function()
+                {
+                    <h1>estoy aqui</h1>
+                });
+                </script>
+
+
+                <div class="form-group">
+
+                    @if(Session::has('message'))
+                    <div class="alert alert-success alert-dismissible">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                        <h5><i class="icon fas fa-check"></i> Muy Bien!</h5>
+                        {{ Session::get('message') }}
+                      </div>
+                    @endif
+
                 </div>
-              </div>
+
+
+                <button type="submit" class="btn btn-success">Enviar</button>
+                </div>
+
               <!-- /.card-body -->
 
-              <div class="card-footer">
-                <button type="submit" class="btn btn-primary">Submit</button>
-              </div>
+
+
             </form>
           </div>
 
@@ -63,9 +79,9 @@
             <div class="card card-widget">
               <div class="card-header">
                 <div class="user-block">
-                  <img class="img-circle" src="../dist/img/user1-128x128.jpg" alt="User Image">
-                  <span class="username"><a href="#">Jonathan Burke Jr.</a></span>
-                  <span class="description">Shared publicly - 7:30 PM Today</span>
+                  <img class="img-circle" src="{{ asset('dashboard/dist/img/dbimage.jpg') }}" alt="User Image">
+                  <span class="username"><a href="#">Actualizar Base de Datos.</a></span>
+                  <span class="description">Información Para Actualizar Reportes</span>
                 </div>
                 <!-- /.user-block -->
                 <div class="card-tools">
@@ -81,26 +97,19 @@
               <!-- /.card-header -->
               <div class="card-body">
                 <!-- post text -->
-                <p>Far far away, behind the word mountains, far from the
-                  countries Vokalia and Consonantia, there live the blind
-                  texts. Separated they live in Bookmarksgrove right at</p>
+                <p>Aquí encontrara información para realizar correctamente la actualización del informe mensual de los asociados . Siga las instrucciones.</p>
 
-                <p>the coast of the Semantics, a large language ocean.
-                  A small river named Duden flows by their place and supplies
-                  it with the necessary regelialia. It is a paradisematic
-                  country, in which roasted parts of sentences fly into
-                  your mouth.</p>
+                <p>Dele clic  al botón buscar y seleccione la nueva planilla de Excel con los datos actualizados de su computadora y posteriormente presione el botón verde enviar, en el momento de cargar correctamente los datos aparecerá un mensaje exitoso en verde. </p>
 
                 <!-- Attachment -->
                 <div class="attachment-block clearfix">
-                  <img class="attachment-img" src="../dist/img/photo1.png" alt="Attachment Image">
+                  <img class="attachment-img" src="{{ asset('dashboard/dist/img/dbimage.jpg') }}" alt="Attachment Image">
 
                   <div class="attachment-pushed">
-                    <h4 class="attachment-heading"><a href="http://www.lipsum.com/">Lorem ipsum text generator</a></h4>
+                    <h4 class="attachment-heading"><a href="https://www.youtube.com/watch?v=NuD_MECLW_E" target="_blank">Visita el video tutorial</a></h4>
 
                     <div class="attachment-text">
-                      Description about the attachment can be placed here.
-                      Lorem Ipsum is simply dummy text of the printing and typesetting industry... <a href="#">more</a>
+                      Dale Click Aqui <a href="https://www.youtube.com/watch?v=NuD_MECLW_E" target="_blank">Video Tutorial</a>
                     </div>
                     <!-- /.attachment-text -->
                   </div>
@@ -108,10 +117,7 @@
                 </div>
                 <!-- /.attachment-block -->
 
-                <!-- Social sharing buttons -->
-                <button type="button" class="btn btn-default btn-sm"><i class="fas fa-share"></i> Share</button>
-                <button type="button" class="btn btn-default btn-sm"><i class="far fa-thumbs-up"></i> Like</button>
-                <span class="float-right text-muted">45 likes - 2 comments</span>
+
               </div>
               <!-- /.card-body -->
 
@@ -123,71 +129,11 @@
           </div>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         <!-- /.col -->
       </div>
       <!-- /.row -->
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     </div>
-
-
-
-
-
 
   </div>
 

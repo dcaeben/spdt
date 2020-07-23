@@ -24,7 +24,6 @@ class CreateReportsTable extends Migration
             $table->integer('ordinario');
             $table->integer('educativo');
             $table->integer('vivienda');
-            $table->string('fecha');
             $table->timestamps();
         });
     }

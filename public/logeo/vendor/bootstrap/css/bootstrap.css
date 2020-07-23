@@ -3145,7 +3145,7 @@ tbody.collapse.show {
 }
 
 .custom-file-control:lang(en)::before {
-  content: "Browse";
+  content: "Buscar";
 }
 
 .nav {

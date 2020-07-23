@@ -2,11 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\report;
+use App\Report;
 use Illuminate\Http\Request;
 use App\User;
 use App\Role;
 use Gate;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Imports\ReportImport;
+
 
 
 class ReportController extends Controller
@@ -21,69 +24,18 @@ class ReportController extends Controller
         return view('report.index');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+
+
+    public function importExcel(Request $request)
     {
-        //
+
+        Report::query()->truncate();
+        $file = $request->file('file');
+        Excel::import(new ReportImport, $file);
+
+        return back()->with('message', 'Importacion de datos Completada');
+
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\report  $report
-     * @return \Illuminate\Http\Response
-     */
-    public function show(report $report)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\report  $report
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(report $report)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\report  $report
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, report $report)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\report  $report
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(report $report)
-    {
-        //
-    }
 }
