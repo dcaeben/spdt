@@ -38,12 +38,17 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 
       <!-- Menu Administradores -->
-      <li class="nav-item d-none d-sm-inline-block">
+      <li class="nav-item {{ request()->is('cargardatos') ? 'active' : '' }} d-none d-sm-inline-block">
         <a href="{{ route('report') }}" class="nav-link">Actualizar Datos</a>
       </li>
 
-      <li class="nav-item d-none d-sm-inline-block">
+      <li class="nav-item {{ request()->is('admin/users') ? 'active' : '' }} d-none d-sm-inline-block">
       <a href="{{ route('admin.users.index') }}" class="nav-link">Administrador de Permisos</a>
+      </li>
+
+      <li class="nav-item {{ request()->is('admin/users') ? 'active' : '' }} d-none d-sm-inline-block">
+        <a class="nav-link">Simulador</a>
+
       </li>
 
 
@@ -56,16 +61,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
      <!-- Menu Asociados -->
 
-      <li class="nav-item dropdown">
-        <a><button type="button" class="btn btn-block bg-gradient-success btn-sm">Simulador de Creditos</button></a>
 
-      </li>
       <!-- Notifications Dropdown Menu -->
 
 
 
       <li class="nav-item">
-        <a class="dropdown-item" href="{{ route('logout') }}"
+        <a class="btn btn-block btn-warning btn-sm" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Salir') }}
@@ -99,7 +101,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
       </div>
 
-      <!-- Sidebar Menu -->
+     <!-- Navegar Izquierda -->
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
@@ -112,44 +114,89 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
+            <ul class="nav nav-treeview" style="display: block;">
+              <li class="nav-item">
+                <a href="{{ route('report') }}" class="nav-link {{ request()->is('cargardatos') ? 'active' : '' }}">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Actualizar Datos</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ route('admin.users.index') }}" class="nav-link  {{ request()->is('admin/users') ? 'active' : '' }}">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Admin Permisos</p>
+                </a>
+              </li>
 
-             <!-- Inicio Menu Administradores -->
+              <li class="nav-item">
+                <a href="#" class="nav-link" >
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Simulador</p>
+                </a>
+              </li>
 
-            <ul class="nav nav-treeview">
-                <li class="nav-item">
-                    <a href="{{ route('report') }}" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p>Actualizar Datos</p>
-                    </a>
-                  </li>
             </ul>
-            <ul class="nav nav-treeview">
-                <li class="nav-item">
-                    <a href="{{ route('admin.users.index') }}" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p>
-                        Administrador de Permisos
-                      </p>
-                    </a>
-                  </li>
-            </ul>
-
-            <!-- Fin Menu Administradores -->
-
-           <!-- Inicio Menu Asociados -->
-
-
-            <!-- Fin Menu Asociados -->
-
 
           </li>
 
-        </ul>
-      </nav>
+
+
+        </nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
       <!-- /.sidebar-menu -->
     </div>
     <!-- /.sidebar -->
+
+
+
+
+
+
+
+
+
+
+
   </aside>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">

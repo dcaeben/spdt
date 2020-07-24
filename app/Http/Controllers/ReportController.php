@@ -3,14 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Report;
-use Illuminate\Http\Request;
-use App\User;
-use App\Role;
-use Gate;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Imports\ReportImport;
-
-
+use App\Http\Requests\ReportRequest;
 
 class ReportController extends Controller
 {
@@ -26,7 +21,7 @@ class ReportController extends Controller
 
 
 
-    public function importExcel(Request $request)
+    public function importExcel(ReportRequest $request)
     {
 
         Report::query()->truncate();

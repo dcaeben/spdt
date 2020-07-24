@@ -2,6 +2,17 @@
 
 @section('content')
 
+<style>
+
+    input[type="number"]
+     {
+    -webkit-appearance: textfield !important;
+    margin: 0;
+    -moz-appearance:textfield !important;
+    }
+
+</style>
+
 <div class="container-fluid">
 <div class="row">
 
@@ -50,7 +61,7 @@
 
             <label>Cedula</label>
 
-          <input id="cedula" type="cedula" class="form-control @error('cedula') is-invalid @enderror" name="cedula" value="{{ $user->cedula }}" required autofocus>
+          <input id="cedula" type="number" class="form-control @error('cedula') is-invalid @enderror" name="cedula" value="{{ $user->cedula }}" required autofocus>
 
           @error('cedula')
           <span class="invalid-feedback" role="alert">
@@ -64,6 +75,8 @@
       <!-- /.card-body -->
 
       <div class="card-footer">
+
+
         <!-- <button type="submit" class="btn btn-outline-success">Actualizar</button> -->
       </div>
 
@@ -74,9 +87,6 @@
   </div>
 
 </div>
-
-
-
 
 
 
@@ -96,10 +106,12 @@
         {{ method_field('PUT') }}
 
         @foreach($roles as $role)
-        <div class="form-check">
-        <input type="checkbox" name="roles[]" value="{{ $role->id }}" @if($user->roles->pluck('id')->contains($role->id)) checked @endif>
-        <label>{{ $role->name }}</label>
+        <li class="list-group-item">
+        <div class="custom-control custom-radio">
+        <b><input type="radio" name="roles[]" value="{{ $role->id }}" @if($user->roles->pluck('id')->contains($role->id)) checked @endif>  <label>{{ $role->name }}</b><a class="float-right">{{ $role->description }}</a>
         </div>
+        </li>
+
         @endforeach
         </div>
 

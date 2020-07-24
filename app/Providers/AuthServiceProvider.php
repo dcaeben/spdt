@@ -21,17 +21,17 @@ class AuthServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    /*Estamos definiendo permisos dependiendo el rol del usuario*/ 
+    /*Estamos definiendo permisos dependiendo el rol del usuario*/
     public function boot()
     {
         $this->registerPolicies();
 
         Gate::define('manage-users', function($user){
-            return $user->hasAnyRoles(['admin', 'author']);
+            return $user->hasAnyRoles(['admin']);
         });
 
         Gate::define('edit-users', function($user){
-            return $user->hasAnyRoles(['admin', 'author']);
+            return $user->hasAnyRoles(['admin']);
         });
 
         Gate::define('delete-users', function($user){
