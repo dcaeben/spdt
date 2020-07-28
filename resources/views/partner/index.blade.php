@@ -1,98 +1,157 @@
-@extends('layouts.dashboard')
+@extends('layouts.dashpartner')
 
 
 @section('content')
 
-<h5 class="text-dark">Bienvenido a Partner aqui podras ver tu info</h5>
 
-<div class="row">
-    <div class="col-12 col-sm-6 col-md-3">
-      <div class="info-box">
-        <span class="info-box-icon bg-info elevation-1"><i class="fas fa-cog"></i></span>
-
-        <div class="info-box-content">
-          <span class="info-box-text">Aportes</span>
-          <span class="info-box-number">
-            $ 2.441.400
-
-          </span>
-        </div>
-        <!-- /.info-box-content -->
+<div class="card card-widget widget-user-2">
+    <!-- Add the bg color to the header using any of the bg-* classes -->
+    <div class="widget-user-header bg-success">
+      <div class="widget-user-image">
+        <img class="img-circle elevation-2" src="{{ asset('dashboard/dist/img/user7-128x128.png') }}" alt="User Avatar">
       </div>
-      <!-- /.info-box -->
+      <!-- /.widget-user-image -->
+      <h3 class="widget-user-username">Informe General de su Relación con el Fondo</h3>
+      <h5 class="widget-user-desc"><strong>{{ Auth::user()->name }}</strong>&nbsp/&nbsp{{ Auth::user()->cedula }}</h5>
     </div>
-    <!-- /.col -->
-    <div class="col-12 col-sm-6 col-md-3">
-      <div class="info-box mb-3">
-        <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-thumbs-up"></i></span>
-
-        <div class="info-box-content">
-          <span class="info-box-text">Revalorizaciones</span>
-          <span class="info-box-number">$ 51.136</span>
-        </div>
-        <!-- /.info-box-content -->
-      </div>
-      <!-- /.info-box -->
-    </div>
-    <!-- /.col -->
-
-    <!-- fix for small devices only -->
-    <div class="clearfix hidden-md-up"></div>
-
-    <div class="col-12 col-sm-6 col-md-3">
-      <div class="info-box mb-3">
-        <span class="info-box-icon bg-success elevation-1"><i class="fas fa-shopping-cart"></i></span>
-
-        <div class="info-box-content">
-          <span class="info-box-text">Ahorros</span>
-          <span class="info-box-number">$ 3.099.400</span>
-        </div>
-        <!-- /.info-box-content -->
-      </div>
-      <!-- /.info-box -->
-    </div>
-    <!-- /.col -->
-    <div class="col-12 col-sm-6 col-md-3">
-      <div class="info-box mb-3">
-        <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-users"></i></span>
-
-        <div class="info-box-content">
-          <span class="info-box-text">Intereses Ahorros</span>
-          <span class="info-box-number">$ 268.443</span>
-        </div>
-        <!-- /.info-box-content -->
-      </div>
-      <!-- /.info-box -->
-    </div>
-    <!-- /.col -->
   </div>
 
 
+    <div class="row">
 
-  <!-- /.columna 2 -->
 
-  <div class="row">
 
-    <!-- /.col -->
-    <div class="col-md-3 col-sm-6 col-12">
-      <div class="info-box bg-gradient-success">
-        <span class="info-box-icon"><i class="far fa-thumbs-up"></i></span>
 
-        <div class="info-box-content">
-          <span class="info-box-text">Total</span>
-          <span class="info-box-number">$ 5.860.379</span>
+
+
+
+
+
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">Informe  Aportes</h3>
+          </div>
+          <!-- /.card-header -->
+          <div class="card-body">
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th style="width: 10px">#</th>
+                  <th>Informe</th>
+
+                  <th style="width: 40px">$</th>
+                </tr>
+              </thead>
+              <tbody>
+                  @csrf
+                <tr>
+
+                  <td>1.</td>
+                  <td>Aportes</td>
+
+                  @foreach($datos as $data)
+                <td><span class="badge bg-success"><h6>{{ number_format($data->aportes,0) }}</h6></span></td>
+
+
+
+
+                </tr>
+                <tr>
+                  <td>2.</td>
+                  <td>Revalorizaciones</td>
+
+                  <td><span class="badge bg-warning"><h6>{{ number_format($data->revalorizaciones,0) }}</h6></span></td>
+                </tr>
+                <tr>
+                  <td>3.</td>
+                  <td>Ahorros</td>
+
+                  <td><span class="badge bg-primary"><h6>{{ number_format($data->ahorros,0) }}</h6></span></td>
+                </tr>
+                <tr>
+                  <td>4.</td>
+                  <td>Intereses</td>
+
+                  <td><span class="badge bg-success"><h6>{{ number_format($data->intereses,0) }}</h6></span></td>
+                </tr>
+
+                <tr>
+                    <td>5.</td>
+                    <td><h5><strong>Total</strong></h5></td>
+
+                    <td><span class="badge bg-success">90%</span></td>
+                 </tr>
+              </tbody>
+            </table>
+          </div>
+          <!-- /.card-body -->
+          <div class="card-footer clearfix">
+
+          </div>
 
         </div>
-        <!-- /.info-box-content -->
+        <!-- /.card -->
+
+
+
       </div>
-      <!-- /.info-box -->
-    </div>
-    <!-- /.col -->
+      <!-- /.col -->
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">Informe Créditos</h3>
 
-    <!-- /.col -->
+            <div class="card-tools">
 
-    <!-- /.col -->
-  </div>
+            </div>
+
+
+          </div>
+          <!-- /.card-header -->
+          <div class="card-body p-0">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th style="width: 10px">#</th>
+                  <th>Informe</th>
+
+                  <th style="width: 40px">$</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1.</td>
+                  <td>Crédito Ordinario</td>
+                  <td><span class="badge bg-danger"><h6>{{ number_format($data->ordinario,0) }}</h6></span></td>
+                </tr>
+                <tr>
+                  <td>2.</td>
+                  <td>Crédito Educativo</td>
+
+                  <td><span class="badge bg-warning"><h6>{{ number_format($data->educativo,0) }}</h6></span></td>
+                </tr>
+                <tr>
+                  <td>3.</td>
+                  <td>Crédito de Vivienda</td>
+
+                  <td><span class="badge bg-primary"><h6>{{ number_format( $data->vivienda,0) }}</h6></span></td>
+                </tr>
+                <tr>
+                  <td>4.</td>
+                  <td><h5><strong>Total Deudas</strong></h5></td>
+
+                  <td><span class="badge bg-success">90%</span></td>
+                </tr>
+              </tbody>
+              @endforeach
+            </table>
+          </div>
+          <!-- /.card-body -->
+        </div>
+        <!-- /.card -->
+
+
 
 
   @endsection
