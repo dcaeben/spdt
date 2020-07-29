@@ -1,15 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Http\Controllers\Controller;
-use App\User;
-use App\Role;
 use App\Report;
-use Gate;
-use Illuminate\Http\Request;
-use DB;
 use Illuminate\Support\Facades\Auth;
+use Barryvdh\DomPDF\Facade as PDF;
 
 
 class PartnerController extends Controller
@@ -36,17 +31,20 @@ class PartnerController extends Controller
 
         $datos = Report::where('cedula', '=', $cedulaUser)->get();
 
-       // dd($datos);
 
         return view('partner.index', ['datos' => $datos]);
 
+    }
 
+    public function exportPdf()
+    {
+        $cedulaUser = Auth::user()->cedula;
 
+        $datos = Report::where('cedula', '=', $cedulaUser)->get();
 
+        $pdf = PDF::loadView('pdf.reporte',  ['datos' => $datos]);
 
-
-
-
+        return $pdf->download('reporte.pdf');
     }
 
 }

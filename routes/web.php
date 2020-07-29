@@ -39,7 +39,12 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+
+// Rustas Asociado
 Route::get('/asociado', 'PartnerController@index')->name('partner');
+
+Route::get('reporte-list-pdf', 'PartnerController@exportPdf')->name('reporte.pdf');
+
 
 //Ruta de Administracion Usuarios
 
