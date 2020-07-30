@@ -52,7 +52,7 @@ class LoginController extends Controller
     }
 
       else if(Auth::user()->hasRole('user')){
-        $this->redirectTo = route('partner');
+        $this->redirectTo = route('home');
         return $this->redirectTo;
     }
 

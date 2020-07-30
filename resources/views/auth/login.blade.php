@@ -49,20 +49,29 @@
             </button>
         </div>
 
-        <div class="text-center p-t-12">
-            @if (Route::has('password.request'))
-             <a class="btn btn-link" href="{{ route('password.request') }}">
-              {{ __('Recordar la contraseña') }}
-            </a>
-            @endif
-        </div>
 
-        <div class="text-center p-t-136">
-            <a class="txt2" href="{{ route('register') }}">
+
+        <div class="text-center p-t-12">
+            <a class="btn btn-link" href="{{ route('register') }}">
                 Crear una Cuenta
                 <i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
             </a>
+
         </div>
+
+
+
+
+        <div class="text-center p-t-136">
+
+
+            @if (Route::has('password.request'))
+            <a class="btn btn-link" href="{{ route('password.request') }}">
+             {{ __('Recordar la contraseña') }}
+           </a>
+           @endif
+        </div>
+
     </form>
 </div>
 @endsection

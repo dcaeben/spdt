@@ -19,9 +19,11 @@ Route::get('/', function () {
 
 //Rutas para simulacion
 
-Route::get('/asociado', function () {
-    return view('asociados/totales');
+Route::get('/registrado', function () {
+    return view('usuario/index');
 });
+
+
 
 Route::get('/planilla', function () {
     return view('asociados/planillames');
