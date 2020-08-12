@@ -2,6 +2,9 @@
 
 @section('content')
 
+<section class="content-header">
+<div class="container-fluid">
+
 <div class="card card-widget widget-user">
     <!-- Add the bg color to the header using any of the bg-* classes -->
     <div class="widget-user-header text-white" style="background: url('{{ asset('dashboard/dist/img/photo1.png') }}') center center;">
@@ -11,8 +14,22 @@
     </div>
     <div class="widget-user-image">
       <img class="img-circle" src="{{ asset('dashboard/dist/img/dbimage.jpg') }}" alt="User Avatar">
+
     </div>
-    <div class="card-footer">
+
+</div>
+
+
+</div>
+</section>
+
+
+
+
+
+
+    <section class="content">
+     <div class="container-fluid">
 
 
       <div class="row">
@@ -42,12 +59,7 @@
                 </div>
 
 
-               <script>
-                $('h1').ready(function()
-                {
-                    <h1>estoy aqui</h1>
-                });
-                </script>
+
 
 
                 <div class="form-group">
@@ -148,7 +160,22 @@
       </div>
       <!-- /.row -->
 
+
+
+
+
+
+
     </div>
+    </section>
+
+
+
+
+
+
+
+
 
   </div>
 
