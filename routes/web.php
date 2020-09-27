@@ -60,3 +60,9 @@ Route::resource('/users', 'UsersController', ['except' => ['show', 'create', 'st
 
 Route::get('/cargardatos', 'ReportController@index')->name('report');
 Route::post('import-list-excel', 'ReportController@importExcel')->name('report.excel');
+Route::get('/seguimiento', 'SeguimientoController@index')->name('seguimiento');
+Route::get('/reporte', 'ReporteController@index')->name('reporte');
+Route::get('/gestion', 'GestionController@index')->name('gestion');
+
+//Rutas consultas seguimiento ajax
+Route::get('/productos', 'SeguimientoController@getProductos');

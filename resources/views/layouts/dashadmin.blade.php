@@ -10,7 +10,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="csrf-token" content="{{ csrf_token() }}">
 
-  <title>{{ config('app.name', 'EbenTeam') }}</title>
+  <title>{{ config('app.name', 'S-PDT') }}</title>
 
   <!-- Font Awesome Icons -->
 
@@ -24,6 +24,18 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
   <link rel="stylesheet" href="{{ asset('dashboard/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css') }}">
   <link rel="stylesheet" href="{{ asset('dashboard/plugins/datatables-responsive/css/responsive.bootstrap4.min.css') }}">
+
+
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <link rel="stylesheet" href="{{ asset('dashboard/plugins/daterangepicker/daterangepicker.css') }}">
+  <link rel="stylesheet" href="{{ asset('dashboard/plugins/icheck-bootstrap/icheck-bootstrap.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('dashboard/plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('dashboard/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('dashboard/plugins/select2/css/select2.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('dashboard/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('dashboard/plugins/bootstrap4-duallistbox/bootstrap-duallistbox.min.css') }}">
+
+
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
@@ -38,16 +50,18 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 
       <!-- Menu Administradores -->
+      <!--
       <li class="nav-item {{ request()->is('cargardatos') ? 'active' : '' }} d-none d-sm-inline-block">
         <a href="{{ route('report') }}" class="nav-link">Actualizar Datos</a>
       </li>
+      -->
 
       <li class="nav-item {{ request()->is('admin/users') ? 'active' : '' }} d-none d-sm-inline-block">
       <a href="{{ route('admin.users.index') }}" class="nav-link">Administrador de Permisos</a>
       </li>
 
-      <li class="nav-item {{ request()->is('admin/users') ? 'active' : '' }} d-none d-sm-inline-block">
-        <a class="nav-link">Simulador</a>
+      <li class="nav-item {{ request()->is('seguimiento') ? 'active' : '' }} d-none d-sm-inline-block">
+        <a class="nav-link">Seguimiento</a>
 
       </li>
 
@@ -87,7 +101,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <a href="index3.html" class="brand-link">
       <img src="{{ asset('dashboard/dist/img/AdminLTELogo.png') }}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
            style="opacity: .8">
-      <span class="brand-text font-weight-light">FERC</span>
+      <span class="brand-text font-weight-light">S-PDT</span>
     </a>
 
     <!-- Sidebar -->
@@ -115,25 +129,37 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </p>
             </a>
             <ul class="nav nav-treeview" style="display: block;">
+            <!--
               <li class="nav-item">
                 <a href="{{ route('report') }}" class="nav-link {{ request()->is('cargardatos') ? 'active' : '' }}">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Actualizar Datos</p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="{{ route('admin.users.index') }}" class="nav-link  {{ request()->is('admin/users') ? 'active' : '' }}">
+            -->
+
+            <li class="nav-item">
+                <a href="{{ route('seguimiento') }}" class="nav-link  {{ request()->is('seguimiento') ? 'active' : '' }}" class="nav-link" >
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Admin Permisos</p>
+                  <p>Seguimiento</p>
                 </a>
               </li>
 
               <li class="nav-item">
-                <a href="#" class="nav-link" >
+                <a href="{{ route('reporte') }}" class="nav-link  {{ request()->is('reporte') ? 'active' : '' }}">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Simulador</p>
+                  <p>Reporte</p>
                 </a>
               </li>
+
+              <li class="nav-item">
+                <a href="{{ route('gestion') }}" class="nav-link  {{ request()->is('gestion') ? 'active' : '' }}">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Gestión</p>
+                </a>
+              </li>
+
+
 
             </ul>
 
@@ -143,76 +169,25 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
         </nav>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
       <!-- /.sidebar-menu -->
     </div>
     <!-- /.sidebar -->
-
-
-
-
-
-
-
-
-
 
 
   </aside>
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
 
-    <!-- /.content-header -->
 
-    <!-- Main content -->
-    <div class="content">
-      <div class="container-fluid">
+
 
        @yield('content')
 
 
-      </div><!-- /.container-fluid -->
-    </div>
+
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
@@ -231,7 +206,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <footer class="main-footer">
     <!-- To the right -->
     <div class="float-right d-none d-sm-inline">
-        FONDO DE EMPLEADOS REGINAL CAUCA
+        S-PDT
     </div>
     <!-- Default to the left -->
     <strong>Copyright &copy; 2019 <a href="https://ebenteam.com">EbenTeam</a>.</strong> All rights reserved.
@@ -257,6 +232,97 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <!-- AdminLTE App -->
 
 
+
+<script src="{{ asset('dashboard/plugins/bootstrap4-duallistbox/jquery.bootstrap-duallistbox.min.js') }}"></script>
+<script src="{{ asset('dashboard/plugins/select2/js/select2.full.min.js') }}"></script>
+
+<script src="{{ asset('dashboard/plugins/moment/moment.min.js') }}"></script>
+<script src="{{ asset('dashboard/plugins/inputmask/min/jquery.inputmask.bundle.min.js') }}"></script>
+
+<script src="{{ asset('dashboard/plugins/daterangepicker/daterangepicker.js') }}"></script>
+<script src="{{ asset('dashboard/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js') }}"></script>
+<script src="{{ asset('dashboard/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js') }}"></script>
+<script src="{{ asset('dashboard/plugins/bootstrap-switch/js/bootstrap-switch.min.js') }}"></script>
+
+<script>
+    $(function () {
+      //Initialize Select2 Elements
+      $('.select2').select2()
+
+      //Initialize Select2 Elements
+      $('.select2bs4').select2({
+        theme: 'bootstrap4'
+      })
+
+      //Datemask dd/mm/yyyy
+      $('#datemask').inputmask('dd/mm/yyyy', { 'placeholder': 'dd/mm/yyyy' })
+      //Datemask2 mm/dd/yyyy
+      $('#datemask2').inputmask('mm/dd/yyyy', { 'placeholder': 'mm/dd/yyyy' })
+      //Money Euro
+      $('[data-mask]').inputmask()
+
+      //Date range picker
+      $('#reservationdate').datetimepicker({
+          format: 'L'
+      });
+
+      $('#seguimientodate').datetimepicker({
+        format: 'L'
+      });
+      //Date range picker
+      $('#reservation').daterangepicker()
+      //Date range picker with time picker
+      $('#reservationtime').daterangepicker({
+        timePicker: true,
+        timePickerIncrement: 30,
+        locale: {
+          format: 'MM/DD/YYYY hh:mm A'
+        }
+      })
+      //Date range as a button
+      $('#daterange-btn').daterangepicker(
+        {
+          ranges   : {
+            'Today'       : [moment(), moment()],
+            'Yesterday'   : [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+            'Last 7 Days' : [moment().subtract(6, 'days'), moment()],
+            'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+            'This Month'  : [moment().startOf('month'), moment().endOf('month')],
+            'Last Month'  : [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+          },
+          startDate: moment().subtract(29, 'days'),
+          endDate  : moment()
+        },
+        function (start, end) {
+          $('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'))
+        }
+      )
+
+      //Timepicker
+      $('#timepicker').datetimepicker({
+        format: 'LT'
+      })
+
+      //Bootstrap Duallistbox
+      $('.duallistbox').bootstrapDualListbox()
+
+      //Colorpicker
+      $('.my-colorpicker1').colorpicker()
+      //color picker with addon
+      $('.my-colorpicker2').colorpicker()
+
+      $('.my-colorpicker2').on('colorpickerChange', function(event) {
+        $('.my-colorpicker2 .fa-square').css('color', event.color.toString());
+      });
+
+      $("input[data-bootstrap-switch]").each(function(){
+        $(this).bootstrapSwitch('state', $(this).prop('checked'));
+      });
+
+    })
+  </script>
+
+
 <script src="{{ asset('dashboard/plugins/bs-custom-file-input/bs-custom-file-input.min.js') }}"></script>
 <script type="text/javascript">
     $(document).ready(function () {
@@ -279,6 +345,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
     });
   </script>
+@yield('script')
 
 
 </body>

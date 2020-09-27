@@ -11,7 +11,7 @@
     <form class="login100-form" method="POST" action="{{ route('login') }}">
         @csrf
         <span class="login100-form-title">
-            Ingreso Asociados
+            Ingreso
         </span>
 
         <div class="wrap-input100">
